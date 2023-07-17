@@ -1,0 +1,110 @@
+@keyframes bg{
+    0%{
+        background-color: white;
+        color:black
+    }
+    33%{
+        background-color: lightgray;
+        color: darkgray;
+    }
+    66%{
+        background-color: darkgray;
+        color: lightgray;
+    }
+    100%{
+        background-color: black;
+        color: white;
+    }
+}
+@keyframes clr{
+    0%{
+        --clr-a:red;
+    }
+    50%{
+        --clr-a:green;
+    }
+    100%{
+        --clr-a:blue;
+    }
+}
+:root{
+    --clr-a:red;
+}
+
+body{
+    height: 100VH;
+    background: linear-gradient(to bottom right,cyan,pink,yellow,green);
+    margin: 0PX;
+    animation: clr 4s ease-in-out 0s infinite forwards alternate;
+}
+
+nav{
+    background: black;
+    padding: 0PX;
+    margin: 0px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    font-size: 2em;
+    position: sticky;
+    top:0;
+}
+nav h1{
+    animation: bg 3s ease-in-out 1s infinite forwards alternate;
+    padding: 0px 1ch;
+    height: 100%;
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.game{
+    display: grid;
+    margin-top: 10px;
+    grid-template-columns: repeat(3,10vw);
+    grid-template-rows: repeat(3,10vw);
+}
+.slot{
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+    min-height: 30px;
+    justify-content: center;
+    border: 2px solid var(--clr-a);
+    color: var(--clr-a);
+    transition: color 2s, border-color 2s;
+    font-size: 6vw;
+}.slot:hover{
+    background-color: rgba(255, 255, 255, 0.355);
+}
+
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 3em;
+    border: 3px solid darkblue;
+    height: fit-content;
+    width: 14ch;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.turn{
+    margin-bottom: 15px;
+}
+.reset{
+    width: 100%;
+    font-size: 1em;
+}
